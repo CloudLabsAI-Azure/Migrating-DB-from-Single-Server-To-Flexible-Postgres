@@ -13,29 +13,18 @@ The new version of the migration tool is a hosted solution where we spin up a pu
 
 ![Process diagram](https://raw.githubusercontent.com/CloudLabsAI-Azure/Migrating-DB-from-Single-Server-To-Flexible-Postgres/main/Images/ProcessDiagram.png "Process Diagram")
 
-The following table shows the approximate time for performing offline migrations for databases of various sizes using the new version of the tool. Note that the migration was performed on the **General-Purpose Flexible server with Standard_D4s_v3 SKU (4VCore), 4TB Storage and 6400 IOPs.**
+The following table shows the time for performing offline migrations for databases of various sizes using the single to flex migration tool. The migration was performed using a flexible server with the SKU – **Standard_D4ds_v4(4 cores, 16GB Memory, 128GB disk and 500 iops)**
 
 | Database size | Approximate time taken (HH:MM:SS) |
 |:---------------|:-------------|
-| 1 GB | 00:01:00 |
-| 5 GB | 00:03:00 |
-| 10 GB | 00:08:00 |
-| 50 GB | 01:45:00 |
-| 100 GB | 06:00:00 |
-| 500 GB | 08:00:00 |
-| 1,000 GB | 09:30:00 |
+| 1 GB | 00:01 |
+| 5 GB | 00:03 |
+| 10 GB | 00:08 |
+| 50 GB | 00:35 |
+| 100 GB | 01:00 |
+| 500 GB | 04:00 |
+| 1,000 GB | 07:00 |
 
-The below table has data on the time taken to perform offline migration with **General-Purpose flexible server with Standard_D8s_v3 SKU (8VCore), 4TB storage and 7500 IOPs.**
-
-| Database size | Approximate time taken (HH:MM:SS) |
-|:---------------|:-------------|
-| 1 GB | 00:00:30 |
-| 5 GB | 00:02:00 |
-| 10 GB | 00:04:00 |
-| 50 GB | 01:15:00 |
-| 100 GB | 05:00:00 |
-| 500 GB | 06:00:00 |
-| 1,000 GB | 07:30:00 |
 
 Please note that these numbers are the average time taken to complete offline migration for a database with a given size with multiple different schemas and with varying data distribution.
 
