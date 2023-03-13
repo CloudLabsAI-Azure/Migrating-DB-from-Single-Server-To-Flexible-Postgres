@@ -3,9 +3,9 @@
 
 ## Introduction
 
-The Single to Flexible server migration tool is designed to move databases from Azure Database for PostgreSQL Single server to Flexible server. We launched the preview version of the tool also known as the **Migration (Preview)** feature in Flexible server, back in August 2022 for customers to try out migrations. The preview version used an infrastructure based on Azure Database Migration Service (DMS). We have aggregated feedback from customers and have come up with an improved version of the migration tool which will use a new infrastructure to perform migrations in a more easy, robust and resilient way. This document will help you understand the functioning of the new version of the tool along with its limitations and the pre-requisites that need to be taken care of before using the tool.
+The Single to Flexible server migration tool is designed to move databases from Azure Database for PostgreSQL Single server to Flexible server. We launched the preview version of the tool also known as the **Migration (Preview)** feature in the Flexible server, back in August 2022 for customers to try out migrations. The preview version used an infrastructure based on Azure Database Migration Service (DMS). We have aggregated feedback from customers and have come up with an improved version of the migration tool which will use a new infrastructure to perform migrations in a more easy, robust, and resilient way. This document will help you understand the functioning of the new version of the tool along with its limitations and the prerequisites that need to be taken care of before using the tool.
 
-Currently, the new version of the tool only supports **Offline** mode of migration. Offline mode presents a simple and hassle-free way to migrate your databases but might incur downtime to your server depending on the size of the databases and the way in which data is distributed across tables in your database.
+Currently, the new version of the tool only supports the **Offline** mode of migration. Offline mode presents a simple and hassle-free way to migrate your databases but might incur downtime to your server depending on the size of the databases and the way in which data is distributed across tables in your database.
 
 ## How does it work?
 
@@ -13,9 +13,9 @@ The new version of the migration tool is a hosted solution where we spin up a pu
 
 ![Process diagram](https://raw.githubusercontent.com/CloudLabsAI-Azure/Migrating-DB-from-Single-Server-To-Flexible-Postgres/main/Images/ProcessDiagram.png "Process Diagram")
 
-The following table shows the time for performing offline migrations for databases of various sizes using the single to flex migration tool. The migration was performed using a flexible server with the SKU – **Standard_D4ds_v4(4 cores, 16GB Memory, 128GB disk and 500 iops)**
+The following table shows the time for performing offline migrations for databases of various sizes using the single-to-flex migration tool. The migration was performed using a flexible server with the SKU – **Standard_D4ds_v4(4 cores, 16GB Memory, 128GB disk, and 500 iops)**
 
-| Database size | Approximate time taken (HH:MM:SS) |
+| Database size | Approximate time taken (HH:MM: SS) |
 |:---------------|:-------------|
 | 1 GB | 00:01 |
 | 5 GB | 00:03 |
@@ -28,21 +28,21 @@ The following table shows the time for performing offline migrations for databas
 
 Please note that these numbers are the average time taken to complete offline migration for a database with a given size with multiple different schemas and with varying data distribution.
 
-From the above data, it is very clear that with a higher compute on Flexible server, the migration will complete faster. It is a good practice to create a flexible server with a higher SKU and complete the migrations from single server in a quick way. Post successful migrations, you can tune the SKU of your flexible server to meet the application requirements.
+From the above data, it is very clear that with a higher compute on the Flexible server, the migration will complete faster. It is a good practice to create a flexible server with a higher SKU and complete the migrations from a single server in a quick way. Post successful migrations, you can tune the SKU of your flexible server to meet the application requirements.
 
 ## Migration prerequisites
 
 The following pre-requisites need to be taken care of before using the Single to Flex Migration tool for migration
 
 ##### Network connectivity between Single and Flexible Server
-The following table summarizes the possible network configuration on single and flexible server.
+The following table summarizes the possible network configuration on single and flexible servers.
 
 |Server Type| Public Access | Private Access |
 |:---------------|:-------------|:-----------------|
-| Single Server | Public access turned **ON** with firewall rules or VNet rules (service endpoints). | Public access turned OFF with private end points configured.|
+| Single Server | Public access turned **ON** with firewall rules or VNet rules (service endpoints). | Public access turned OFF with private endpoints configured.|
 | Flexible Server | Public access with firewall rules | Server deployed inside a VNet and delegated subnet.|
 
- >**NOTE :** Currently private end points are not supported in Flexible server. It will be supported at a later point time.
+ >**NOTE:** Currently private endpoints are not supported in the Flexible server. It will be supported at a later point in time.
 
 The following table summarizes the list of networking scenarios supported by the Single to Flex migration tool.
   
@@ -54,6 +54,6 @@ The following table summarizes the list of networking scenarios supported by the
 | Private Access | Private Access | Yes|
 
 **Steps needed to establish connectivity between your Single and Flexible Server**
-* If your single server is public access (case #1 and case #2 in the above table), there's nothing needed from your end. The single to flex migration tool automatically establishes connection between single and flexible server and the migration will go through.
+* If your single server is public access (case #1 and case #2 in the above table), there's nothing needed from your end. The single-to-flex migration tool automatically establishes the connection between single and flexible servers and the migration will go through.
 
-* If your single server is in private access, then the only supported scenario is when your Flexible server is inside a VNet. If your flexible server is deployed in the same VNet as the private end point of your Single server, connections between single server and flexible server should automatically work provided there is no network security group(NSGs) blocking the connectivity between subnets. If flexible server is deployed in another VNet, [peering should be established between the VNets](../../virtual-network/tutorial-connect-virtual-networks-portal.md) for the connection to work between Single and Flexible server.  
+* If your single server is in private access, then the only supported scenario is when your Flexible server is inside a VNet. If your flexible server is deployed in the same VNet as the private end point of your Single server, connections between the single server and the flexible server should automatically work provided there is no network security group(NSGs) blocking the connectivity between subnets. If the flexible server is deployed in another VNet, [peering should be established between the VNets](../../virtual-network/tutorial-connect-virtual-networks-portal.md) for the connection to work between Single and Flexible servers.  
