@@ -42,8 +42,7 @@ The following table summarizes the possible network configuration on single and 
 | Single Server | Public access turned **ON** with firewall rules or VNet rules (service endpoints). | Public access turned OFF with private end points configured.|
 | Flexible Server | Public access with firewall rules | Server deployed inside a VNet and delegated subnet.|
 
->[!NOTE]
-> Currently private end points are not supported in Flexible server. It will be supported at a later point time.
+ >**NOTE :** Currently private end points are not supported in Flexible server. It will be supported at a later point time.
 
 The following table summarizes the list of networking scenarios supported by the Single to Flex migration tool.
   
