@@ -29,3 +29,31 @@ The following table shows the time for performing offline migrations for databas
 Please note that these numbers are the average time taken to complete offline migration for a database with a given size with multiple different schemas and with varying data distribution.
 
 From the above data, it is very clear that with a higher compute on Flexible server, the migration will complete faster. It is a good practice to create a flexible server with a higher SKU and complete the migrations from single server in a quick way. Post successful migrations, you can tune the SKU of your flexible server to meet the application requirements.
+
+#### Migration prerequisites
+The following pre-requisites need to be taken care of before using the Single to Flex Migration tool for migration
+
+##### Network connectivity between Single and Flexible Server
+The following table summarizes the possible network configuration on single and flexible server.
+
+|Server Type| Public Access | Private Access |
+|:---------------|:-------------|:-----------------|
+| Single Server | Public access turned **ON** with firewall rules or VNet rules (service endpoints). | Public access turned OFF with private end points configured.|
+| Flexible Server | Public access with firewall rules | Server deployed inside a VNet and delegated subnet.|
+
+>[!NOTE]
+> Currently private end points are not supported in Flexible server. It will be supported at a later point time.
+
+The following table summarizes the list of networking scenarios supported by the Single to Flex migration tool.
+  
+|Single Server Config| Flexible Server Config | Supported by Migration tool |
+|:---------------|:-------------|:-----------------|
+| Public Access | Public Access | Yes|
+| Public Access | Private Access | Yes|
+| Private Access | Public Access | No|
+| Private Access | Private Access | Yes|
+
+**Steps needed to establish connectivity between your Single and Flexible Server**
+* If your single server is public access (case #1 and case #2 in the above table), there's nothing needed from your end. The single to flex migration tool automatically establishes connection between single and flexible server and the migration will go through.
+
+* If your single server is in private access, then the only supported scenario is when your Flexible server is inside a VNet. If your flexible server is deployed in the same VNet as the private end point of your Single server, connections between single server and flexible server should automatically work provided there is no network security group(NSGs) blocking the connectivity between subnets. If flexible server is deployed in another VNet, [peering should be established between the VNets](../../virtual-network/tutorial-connect-virtual-networks-portal.md) for the connection to work between Single and Flexible server.  
