@@ -30,7 +30,8 @@ Please note that these numbers are the average time taken to complete offline mi
 
 From the above data, it is very clear that with a higher compute on Flexible server, the migration will complete faster. It is a good practice to create a flexible server with a higher SKU and complete the migrations from single server in a quick way. Post successful migrations, you can tune the SKU of your flexible server to meet the application requirements.
 
-#### Migration prerequisites
+## Migration prerequisites
+
 The following pre-requisites need to be taken care of before using the Single to Flex Migration tool for migration
 
 ##### Network connectivity between Single and Flexible Server
