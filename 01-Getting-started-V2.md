@@ -1,6 +1,6 @@
-# Getting Started with Your AZ-900: Microsoft Azure Fundamentals Workshop
+# Getting Started with Your Migrating DB from Single Server To Flexible Postgres Workshop
  
-Welcome to your AZ-900: Microsoft Azure Fundamentals workshop! We've prepared a seamless environment for you to explore and learn about foundational knowledge of cloud concepts in general and Microsoft Azure in particular. Let's begin by making the most of this experience:
+Welcome to your Migrating DB from Single Server To Flexible Postgres workshop! We've prepared a seamless environment for you to explore and learn about migrating databases from Azure Database for PostgreSQL Single server to Flexible server. Let's begin by making the most of this experience:
  
 ## Accessing Your Lab Environment
  
