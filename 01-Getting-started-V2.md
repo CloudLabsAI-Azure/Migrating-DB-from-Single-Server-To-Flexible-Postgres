@@ -1,6 +1,6 @@
-# Getting Started with Your Migrating DB from Single Server To Flexible Postgres Workshop
+# Getting Started with Your Migrating DB from Single Server To Flexible Postgres SQL server Workshop
  
-Welcome to your Migrating DB from Single Server To Flexible Postgres workshop! We've prepared a seamless environment for you to explore and learn about migrating databases from Azure Database for PostgreSQL Single server to Flexible server. Let's begin by making the most of this experience:
+Welcome to your Migrating DB from Single Server To Flexible Postgres SQL server workshop! We've prepared a seamless environment for you to explore and learn about migrating databases from Azure Database for PostgreSQL Single server to Flexible server. Let's begin by making the most of this experience:
  
 ## Accessing Your Lab Environment
  
