@@ -1,4 +1,4 @@
-# Getting Started with Azure
+# Getting Started with the lab
 
 ## Overview
 
