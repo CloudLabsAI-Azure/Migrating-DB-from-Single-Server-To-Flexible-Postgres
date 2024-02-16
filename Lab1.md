@@ -15,15 +15,16 @@
      |**Subscription**|Leave it as default (1)|
      |**Resource Group**| (2)|
      | **Server name**|**postgres** (3)|
-     |**Admin Username** |**azureuser** (4)|
-     |**Password** |**Password.1!!** (5)|
-     |**Confirm Password** |**Password.1!!**(6)|
+     | **Region**|**West US** (4)|
+     |**Admin Username** |**azureuser** (5)|
+     |**Password** |**Password.1!!** (6)|
+     |**Confirm Password** |**Password.1!!**(7)|
   
-     ![](Images/img3.png)
+     ![](Images/img3.1.png)
   
      ![](Images/img4.png)
 
-4. In the pop-up that appears in the **Configure IP address in Firewall Rules** click **Create server without firewall rules**
+5. In the pop-up that appears in the **Configure IP address in Firewall Rules** click **Create server without firewall rules**
    
    ![](Images/img5.png)
 
