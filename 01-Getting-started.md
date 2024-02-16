@@ -45,6 +45,4 @@ In this exercise, you will log in to the Azure Portal and review the pre-deploye
 
 6. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
 
- ## Summary
 
-* In this exercise, you signed into the Azure Portal and reviewed the pre-deployed resources.
