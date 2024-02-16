@@ -1,4 +1,4 @@
-# Exercise -2: Migrating the database from a Single PostgreSQL server to Flexible PostgreSQL Server using an offline method
+# Lab 2: Migrating the database from a Single PostgreSQL server to Flexible PostgreSQL Server using an offline method
 
 In this exercise, you will be migrating the database from a Single PostgreSQL server to a Flexible PostgreSQL Server using the new Migration (Preview) tool.
 
