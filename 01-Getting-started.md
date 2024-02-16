@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this exercise, you will log in to the Azure Portal and review the pre-deployed resources as part of the lab environment.
+In this exercise, you will log in to the Azure Portal and review the lab environment.
 
 ### Getting Started with Lab
 
