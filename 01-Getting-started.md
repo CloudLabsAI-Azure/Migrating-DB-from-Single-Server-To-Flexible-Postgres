@@ -45,4 +45,5 @@ In this exercise, you will log in to the Azure Portal and review the lab environ
 
 6. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
 
+7. Click **Next** to proceed with the lab.
 
