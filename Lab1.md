@@ -19,8 +19,8 @@
      |Setting|Value|
      |:----|:----|
      |**Subscription**|Leave it as default (1)|
-     |**Resource Group**| (2)|
-     | **Server name**|**postgres** (3)|
+     |**Resource Group**| **Postgres-<inject key="DeploymentID" enableCopy="false" />** (2)|
+     | **Server name**|**postgres<inject key="DeploymentID" enableCopy="false" />** (3)|
      | **Region**|**West US** (4)|
      |**Admin Username** |**azureuser** (5)|
      |**Password** |**Password.1!!** (6)|
