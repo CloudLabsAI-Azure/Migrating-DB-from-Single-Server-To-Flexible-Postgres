@@ -76,80 +76,75 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
     
 1. Now navigate back to **Azure Database for PostgreSQL Flexible Server** resource page and select **Migration (1)** and click on **+ Migration from Single Server (2)**.
     
-     ![](Images/postgreSQL-migration.png)
+     ![](Images/img1-mig.png)
     
 2. On the **Setup** page, follow the below instructions:
     
     - Migration name : Enter **Migrate-single-to-flexible-server (1)**
-    - click on **Next : Source > (2)**.
+    - Migration option choose **Validate and Migrate**
     
-     ![](Images/migratepostgresqld.png)
+      ![](Images/img2-mig.png)
 
- 3. On the **Source** tab, follow the below-mentioned instructions:
+ 3. Click **Next:Connect to Source >** and on the **Source** tab, and follow the below-mentioned instructions:
     
     - Subscription: Choose the default subscription **(1)**
     - Resource group : Choose **ODL-SinToFlexible-<inject key="DeploymentID" enableCopy="true"/> (2)** from drop-down list
     - Server name: Leave it as **Default (3)**
     - Password : Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (4)**
-    - Choose databases to migrate (up to 8): Check the box next to **Sampledb (5)**
-    - Migration mode: Choose **Offline (6)** from the drop-down list.
-    - Click on **Next : Target > (7)**.
+    - Test Connection : Click on **Connect to Source**
+  
+      ![](Images/img3-mig.png)
     
-    ![](Images/1ndmigrateserver.png)
+ 4. Click **Next: Select Migration Target** and under this tab, follow the below-mentioned instructions:
     
- 4. Under the **Target** tab, follow the below-mentioned instructions:
+    - Password : Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (1)**
+    - Test Connection: Click on **Connect to Target (2)**
     
-    - Subscription: Choose the default subscription **(1)**
-    - Resource group : Choose **ODL-SinToFlexible-<inject key="DeploymentID" enableCopy="true"/> (2)** from drop-down list
-    - Server name: Leave it as **Default (3)**
-    - Password : Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (4)**
-    - Click on **Select database(s) for migration > (5)**.
-    
-    ![](Images/nextdatabasesgs.png)
+      ![](Images/img4-mig.png)
         
-5. On the select database page, select **sampledb** database (1) and click on **Next: Review + Create >** button.
+5. Click on **Next: Select database(s) for migration** and on the select database page, select **sampledb** database (1) and click on **Next: Summary > (2)** button.
     
-    ![](Images/selectdbase.png)
-    
-    > **Info:** After you hit the Create button, a notification appears in a few seconds to say that the migration was successfully created. 
+    ![](Images/img5.png)
     
 6. You should automatically be redirected to the **Migration** page of Flexible Server. It should have a new entry for the recently created migration.
     
     ![](Images/postgreSQL-status.png)
 
-7. Select the migration name in the grid to see the details of that migration.
+7. In the **Summary** tab, click on **Start Validation and Migration**
+
+8. Select the migration name in the grid to see the details of that migration.
     
     ![](Images/sampledb.png)
     
-8. Click on the **Refresh** button to get the latest status of the migration. Over time, the migration will succeed or fail with appropriate errors.
+9. Click on the **Refresh** button to get the latest status of the migration. Over time, the migration will succeed or fail with appropriate errors.
    
-9. Once the migration has succeeded, you should be able to see the database listed with the status as **Complete**.
+10. Once the migration has succeeded, you should be able to see the database listed with the status as **Complete**.
     
     ![](Images/sampledb1.png)
 
-10. Navigate back to **flexiblepgsql<inject key="DeploymentID" enableCopy="false"/>** and select **Databases (1)** from left menu under Settings. Now you will be able to see the migrated database **sampledb (2)**.
+11. Navigate back to **flexiblepgsql<inject key="DeploymentID" enableCopy="false"/>** and select **Databases (1)** from left menu under Settings. Now you will be able to see the migrated database **sampledb (2)**.
     
     ![](Images/databases.png)
 
-11. Now click on **Connect** to connect to the database.
+12. Now click on **Connect** to connect to the database.
 
     ![](Images/postgreSQL-connect.png)
     
-12. Click on **Yes** on the pop-up to allow the firewall settings.
+13. Click on **Yes** on the pop-up to allow the firewall settings.
 
     ![](Images/yes.png)
     
-13. Wait for 1-2 minutes until the firewall rules get updated and you may need to enter your server password to connect to the cloud shell.
+14. Wait for 1-2 minutes until the firewall rules get updated and you may need to enter your server password to connect to the cloud shell.
 
       - Enter the password **<inject key="PostGre SQL Password" enableCopy="true"/>**
       
-      ![](Images/enterpasswor.png)
+      ![](Images/img6-mig.png)
       
-14. Minimize the Azure Portal window and search for **Command Prompt (1)** from the Windows Start menu and select it **(2)**.
+15. Minimize the Azure Portal window and search for **Command Prompt (1)** from the Windows Start menu and select it **(2)**.
 
     ![](Images/cmd.png)
     
-15. Run the below-given commands to migrate users and roles:
+16. Run the below-given commands to migrate users and roles:
 
     ```
     cd C:\Program Files\PostgreSQL\11\bin
@@ -167,7 +162,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
   
    > **Note:** The dump script shouldn't be expected to run completely without errors. In particular, because the script will issue CREATE ROLE for every role existing in the source cluster, it's certain to get a “role already exists” error for the bootstrap superuser like azure_pg_admin or azure_superuser. This error is harmless and can be ignored. 
    
-16. Navigate back to Azure Portal where you connected to Bash and run the below command to see the migrated tables from the Single Postgres server.
+17. Navigate back to Azure Portal where you connected to Bash and run the below command to see the migrated tables from the Single Postgres server.
     
     ```
     \dt
@@ -175,7 +170,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
     
     ![](Images/sampledbtable.png)
     
-17. Run the below command to see the migrated roles from the Single Postgres server.
+18. Run the below command to see the migrated roles from the Single Postgres server.
 
     ```
     \du
@@ -184,9 +179,9 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
     
     >**Note:** Here you can observe both the usernames of single and flexible serves which are ```azureuser``` and ```demouser```.
     
-18. You can also create roles by editing the **roles.sql** file.
+19. You can also create roles by editing the **roles.sql** file.
 
-19. You can also create new roles by following the below-given steps: 
+20. You can also create new roles by following the below-given steps: 
 
    -  Navigate to the path **C:\Program Files\PostgreSQL\11\bin (1)** and select the file **roles.sql (2)**.
 
@@ -215,7 +210,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
     
      >**Note:** Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it.
 
-20. Navigate back to Azure Portal where you have connected to sampledb server and run the below command to view the newly created role
+21. Navigate back to Azure Portal where you have connected to sampledb server and run the below command to view the newly created role
 
    ```
    \du
