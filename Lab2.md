@@ -104,7 +104,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
         
 5. Click on **Next: Select database(s) for migration** and on the select database page, select **sampledb** database (1) and click on **Next: Summary > (2)** button.
     
-    ![](Images/img5.png)
+    ![](Images/img5-mig.png)
     
 6. You should automatically be redirected to the **Migration** page of Flexible Server. It should have a new entry for the recently created migration.
     
