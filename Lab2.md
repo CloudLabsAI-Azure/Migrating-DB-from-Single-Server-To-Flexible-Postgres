@@ -74,7 +74,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
 ## Task 2: Migrate Data Base from Azure Database for PostgreSQL single server
 
     
-1. Now navigate back to **Azure Database for PostgreSQL Flexible Server** resource page and select **Migration (1)** and click on **+ Migration from Single Server (2)**.
+1. Now navigate back to **Azure Database for PostgreSQL Flexible Server** resource page and select **Migration (1)** and click on **+ Create (2)**.
     
      ![](Images/img1-mig.png)
     
@@ -95,22 +95,22 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
   
       ![](Images/img3-mig.png)
     
- 4. Click **Next: Select Migration Target** and under this tab, follow the below-mentioned instructions:
+ 4. Click **Next: Select migration target** and under this tab, follow the below-mentioned instructions:
     
     - Password: Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (1)**
     - Test Connection: Click on **Connect to Target (2)**
     
       ![](Images/img4-mig.png)
         
-5. Click on **Next: Select database(s) for migration** and on the select database page, select **sampledb** database (1) and click on **Next: Summary > (2)** button.
-    
+5. Click on **Next: Select database(s) for migration** and on the select database page, select **sampledb** database (1). Click on **Next: Summary > (2)** button.
+
     ![](Images/img5-mig.png)
+
+6. In the **Summary** tab, click on **Start Validation and Migration**
     
-6. You should automatically be redirected to the **Migration** page of Flexible Server. It should have a new entry for the recently created migration.
+7. You should automatically be redirected to the **Migration** page of Flexible Server. It should have a new entry for the recently created migration.
     
     ![](Images/postgreSQL-status.png)
-
-7. In the **Summary** tab, click on **Start Validation and Migration**
 
 8. Select the migration name in the grid to see the details of that migration.
     
