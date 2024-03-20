@@ -25,7 +25,7 @@ In this exercise, you will log in to the Azure Portal and review the lab environ
     
    ![](Images/azure%20portal.png)
    
-2. On the **Sign into Microsoft Azure** tab, you will see the login screen, enter the following username, and, then click on **Next**.
+2. On the **Sign into Microsoft Azure** tab, you will see the login screen, enter the following username, and then click on **Next**.
 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
 
