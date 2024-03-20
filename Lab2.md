@@ -17,8 +17,8 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    
 4. Follow the below-mentioned instructions and click on **Create Storage (3)**.
 
-    - Storage account : Enter **stacc<inject key="DeploymentID" enableCopy="false"/> (1)**
-    - File Share : Enter **blob (2)**
+    - Storage account: Enter **stacc<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - File Share: Enter **blob (2)**
 
     ![](Images/E2T1S4.png)
     
@@ -80,7 +80,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
     
 2. On the **Setup** page, follow the below instructions:
     
-    - Migration name : Enter **Migrate-single-to-flexible-server (1)**
+    - Migration name: Enter **Migrate-single-to-flexible-server (1)**
     - Migration option choose **Validate and Migrate**
     
       ![](Images/img2-mig.png)
@@ -88,16 +88,16 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
  3. Click **Next:Connect to Source >** and on the **Source** tab, and follow the below-mentioned instructions:
     
     - Subscription: Choose the default subscription **(1)**
-    - Resource group : Choose **ODL-SinToFlexible-<inject key="DeploymentID" enableCopy="true"/> (2)** from drop-down list
+    - Resource group: Choose **ODL-SinToFlexible-<inject key="DeploymentID" enableCopy="true"/> (2)** from drop-down list
     - Server name: Leave it as **Default (3)**
-    - Password : Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (4)**
-    - Test Connection : Click on **Connect to Source**
+    - Password: Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (4)**
+    - Test Connection: Click on **Connect to Source**
   
       ![](Images/img3-mig.png)
     
  4. Click **Next: Select Migration Target** and under this tab, follow the below-mentioned instructions:
     
-    - Password : Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (1)**
+    - Password: Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (1)**
     - Test Connection: Click on **Connect to Target (2)**
     
       ![](Images/img4-mig.png)
