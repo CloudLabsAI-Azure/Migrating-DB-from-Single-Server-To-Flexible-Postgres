@@ -106,7 +106,9 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
 
     ![](Images/img5-mig.png)
 
-6. In the **Summary** tab, click on **Start Validation and Migration**
+6. In the **Summary** tab, click on **Start Validation and Migration**.
+
+    ![](Images/lab2-1.png)
     
 7. You should automatically be redirected to the **Migration** page of Flexible Server. It should have a new entry for the recently created migration.
     
@@ -120,7 +122,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    
 10. Once the migration has succeeded, you should be able to see the database listed with the status as **Complete**.
     
-    ![](Images/sampledb1.png)
+    ![](Images/lab2-2.png)
 
 11. Navigate back to **flexiblepgsql<inject key="DeploymentID" enableCopy="false"/>** and select **Databases (1)** from left menu under Settings. Now you will be able to see the migrated database **sampledb (2)**.
     
