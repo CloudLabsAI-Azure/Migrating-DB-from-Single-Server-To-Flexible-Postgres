@@ -189,13 +189,9 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
 
       ![](Images/rolesfile.png)
 
-   - Right-click on **roles.sql** **(1)** file, and then select **Open With** **(2)**.
+   - Right-click on **roles.sql** **(1)** file, and then select **Open With** **(2)** and select **Notepad**.
 
-      ![](Images/sql-openwith.png)
-   
-   - Select **Notepad** **(1)**, and click on **Ok** **(2)**.
-
-      ![](Images/sql-notepad.png)
+      ![](Images/lab2-3.png)
    
    - Add the below-mentioned command and save the file.
 
