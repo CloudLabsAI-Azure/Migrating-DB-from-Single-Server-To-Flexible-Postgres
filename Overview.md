@@ -32,10 +32,10 @@ From the above data, it is very clear that with a higher compute on the Flexible
 
 ## Migration prerequisites
 
-The following pre-requisites need to be taken care of before using the Single to Flex Migration tool for migration
+The following pre-requisites need to be taken care of before using the Single to Flex Migration tool for migration:
 
 ##### Network connectivity between Single and Flexible Server
-The following table summarizes the possible network configuration on single and flexible servers.
+The following table summarizes the possible network configuration on single and flexible servers:
 
 |Server Type| Public Access | Private Access |
 |:---------------|:-------------|:-----------------|
@@ -44,7 +44,7 @@ The following table summarizes the possible network configuration on single and 
 
  >**NOTE:** Currently private endpoints are not supported in the Flexible server. It will be supported at a later point in time.
 
-The following table summarizes the list of networking scenarios supported by the Single to Flex migration tool.
+The following table summarizes the list of networking scenarios supported by the Single to Flex migration tool:
   
 |Serial number|Single Server Config| Flexible Server Config | Supported by Migration tool |
 |:---------------|:---------------|:-------------|:-----------------|

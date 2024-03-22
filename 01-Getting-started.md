@@ -25,7 +25,7 @@ In this exercise, you will log in to the Azure Portal and review the lab environ
     
    ![](Images/azure%20portal.png)
    
-2. On the **Sign into Microsoft Azure** tab, you will see the login screen, enter the following username, and, then click on **Next**.
+2. On the **Sign into Microsoft Azure** tab, you will see the login screen, enter the following username, and then click on **Next**.
 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
 
@@ -43,7 +43,6 @@ In this exercise, you will log in to the Azure Portal and review the lab environ
 
 5. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
-6. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+6. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
 7. Click **Next** to proceed with the lab.
-

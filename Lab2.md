@@ -17,8 +17,8 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    
 4. Follow the below-mentioned instructions and click on **Create Storage (3)**.
 
-    - Storage account : Enter **stacc<inject key="DeploymentID" enableCopy="false"/> (1)**
-    - File Share : Enter **blob (2)**
+    - Storage account: Enter **stacc<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - File Share: Enter **blob (2)**
 
     ![](Images/E2T1S4.png)
     
@@ -27,7 +27,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    - Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it from bash.
     
        ```bash
-       psql --host=pgsql<DID>.postgres.database.azure.com --port=5432 --username=demouser@pgsql<DID> --dbname=postgres
+       psql --host=pgsql<inject key="DeploymentID" enableCopy="false"/>.postgres.database.azure.com --port=5432 --username=demouser@pgsql<inject key="DeploymentID" enableCopy="false"/> --dbname=postgres
        ```
    - Copy and paste the value **<inject key="PostGre SQL Password" enableCopy="true"/>** as Password and hit **Enter**
     
@@ -74,13 +74,13 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
 ## Task 2: Migrate Data Base from Azure Database for PostgreSQL single server
 
     
-1. Now navigate back to **Azure Database for PostgreSQL Flexible Server** resource page and select **Migration (1)** and click on **+ Migration from Single Server (2)**.
+1. Now navigate back to **Azure Database for PostgreSQL Flexible Server** resource page and select **Migration (1)** and click on **+ Create (2)**.
     
      ![](Images/img1-mig.png)
     
 2. On the **Setup** page, follow the below instructions:
     
-    - Migration name : Enter **Migrate-single-to-flexible-server (1)**
+    - Migration name: Enter **Migrate-single-to-flexible-server (1)**
     - Migration option choose **Validate and Migrate**
     
       ![](Images/img2-mig.png)
@@ -88,29 +88,31 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
  3. Click **Next:Connect to Source >** and on the **Source** tab, and follow the below-mentioned instructions:
     
     - Subscription: Choose the default subscription **(1)**
-    - Resource group : Choose **ODL-SinToFlexible-<inject key="DeploymentID" enableCopy="true"/> (2)** from drop-down list
+    - Resource group: Choose **ODL-SinToFlexible-<inject key="DeploymentID" enableCopy="true"/> (2)** from drop-down list
     - Server name: Leave it as **Default (3)**
-    - Password : Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (4)**
-    - Test Connection : Click on **Connect to Source**
+    - Password: Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (4)**
+    - Test Connection: Click on **Connect to Source**
   
       ![](Images/img3-mig.png)
     
- 4. Click **Next: Select Migration Target** and under this tab, follow the below-mentioned instructions:
+ 4. Click **Next: Select migration target** and under this tab, follow the below-mentioned instructions:
     
-    - Password : Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (1)**
+    - Password: Enter the value **<inject key="PostGre SQL Password" enableCopy="true"/> (1)**
     - Test Connection: Click on **Connect to Target (2)**
     
       ![](Images/img4-mig.png)
         
-5. Click on **Next: Select database(s) for migration** and on the select database page, select **sampledb** database (1) and click on **Next: Summary > (2)** button.
-    
+5. Click on **Next: Select database(s) for migration** and on the select database page, select **sampledb** database (1). Click on **Next: Summary > (2)** button.
+
     ![](Images/img5-mig.png)
+
+6. In the **Summary** tab, click on **Start Validation and Migration**.
+
+    ![](Images/lab2-1.png)
     
-6. You should automatically be redirected to the **Migration** page of Flexible Server. It should have a new entry for the recently created migration.
+7. You should automatically be redirected to the **Migration** page of Flexible Server. It should have a new entry for the recently created migration.
     
     ![](Images/postgreSQL-status.png)
-
-7. In the **Summary** tab, click on **Start Validation and Migration**
 
 8. Select the migration name in the grid to see the details of that migration.
     
@@ -120,7 +122,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    
 10. Once the migration has succeeded, you should be able to see the database listed with the status as **Complete**.
     
-    ![](Images/sampledb1.png)
+    ![](Images/lab2-2.png)
 
 11. Navigate back to **flexiblepgsql<inject key="DeploymentID" enableCopy="false"/>** and select **Databases (1)** from left menu under Settings. Now you will be able to see the migrated database **sampledb (2)**.
     
@@ -152,12 +154,12 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
                                                                                      
     - Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it.
     ```
-    pg_dumpall -r --host=pgsql<DID>.postgres.database.azure.com --port=5432 --username=demouser@pgsql<DID> --database=sampledb > roles.sql
+    pg_dumpall -r --host=pgsql<inject key="DeploymentID" enableCopy="true"/>.postgres.database.azure.com --port=5432 --username=demouser@pgsql<inject key="DeploymentID" enableCopy="true"/> --database=sampledb > roles.sql
     ```
     
     - Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it.
     ```
-    psql -f roles.sql --host=flexiblepgsql<DID>.postgres.database.azure.com --port=5432 --username=azureuser --dbname=sampledb
+    psql -f roles.sql --host=flexiblepgsql<inject key="DeploymentID" enableCopy="true"/>.postgres.database.azure.com --port=5432 --username=azureuser --dbname=sampledb
     ```
   
    > **Note:** The dump script shouldn't be expected to run completely without errors. In particular, because the script will issue CREATE ROLE for every role existing in the source cluster, it's certain to get a “role already exists” error for the bootstrap superuser like azure_pg_admin or azure_superuser. This error is harmless and can be ignored. 
@@ -187,13 +189,9 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
 
       ![](Images/rolesfile.png)
 
-   - Right-click on **roles.sql** **(1)** file, and then select **Open With** **(2)**.
+   - Right-click on **roles.sql** **(1)** file, and then select **Open With** **(2)** and select **Notepad**.
 
-      ![](Images/sql-openwith.png)
-   
-   - Select **Notepad** **(1)**, and click on **Ok** **(2)**.
-
-      ![](Images/sql-notepad.png)
+      ![](Images/lab2-3.png)
    
    - Add the below-mentioned command and save the file.
 
@@ -205,7 +203,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    - Navigate back to the command prompt and run the below command:
 
      ```
-     psql -f roles.sql --host=flexiblepgsql<DID>.postgres.database.azure.com --port=5432 --username=azureuser --dbname=sampledb
+     psql -f roles.sql --host=flexiblepgsql<inject key="DeploymentID" enableCopy="false"/>.postgres.database.azure.com --port=5432 --username=azureuser --dbname=sampledb
      ```
     
      >**Note:** Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it.
@@ -217,7 +215,11 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    ```
    ![](Images/sqluser1.png) 
 
-  
+   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+   > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.  
    
 ## Summary
 
