@@ -27,7 +27,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    - Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it from bash.
     
        ```bash
-       psql --host=pgsql<DID>.postgres.database.azure.com --port=5432 --username=demouser@pgsql<DID> --dbname=postgres
+       psql --host=pgsql<inject key="DeploymentID" enableCopy="false"/>.postgres.database.azure.com --port=5432 --username=demouser@pgsql<inject key="DeploymentID" enableCopy="false"/> --dbname=postgres
        ```
    - Copy and paste the value **<inject key="PostGre SQL Password" enableCopy="true"/>** as Password and hit **Enter**
     
