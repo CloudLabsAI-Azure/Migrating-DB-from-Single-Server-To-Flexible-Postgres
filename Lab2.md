@@ -154,12 +154,12 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
                                                                                      
     - Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it.
     ```
-    pg_dumpall -r --host=pgsql<DID>.postgres.database.azure.com --port=5432 --username=demouser@pgsql<DID> --database=sampledb > roles.sql
+    pg_dumpall -r --host=pgsql<inject key="DeploymentID" enableCopy="true"/>.postgres.database.azure.com --port=5432 --username=demouser@pgsql<inject key="DeploymentID" enableCopy="true"/> --database=sampledb > roles.sql
     ```
     
     - Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it.
     ```
-    psql -f roles.sql --host=flexiblepgsql<DID>.postgres.database.azure.com --port=5432 --username=azureuser --dbname=sampledb
+    psql -f roles.sql --host=flexiblepgsql<inject key="DeploymentID" enableCopy="true"/>.postgres.database.azure.com --port=5432 --username=azureuser --dbname=sampledb
     ```
   
    > **Note:** The dump script shouldn't be expected to run completely without errors. In particular, because the script will issue CREATE ROLE for every role existing in the source cluster, it's certain to get a “role already exists” error for the bootstrap superuser like azure_pg_admin or azure_superuser. This error is harmless and can be ignored. 
@@ -203,7 +203,7 @@ In this exercise, you will be migrating the database from a Single PostgreSQL se
    - Navigate back to the command prompt and run the below command:
 
      ```
-     psql -f roles.sql --host=flexiblepgsql<DID>.postgres.database.azure.com --port=5432 --username=azureuser --dbname=sampledb
+     psql -f roles.sql --host=flexiblepgsql<inject key="DeploymentID" enableCopy="false"/>.postgres.database.azure.com --port=5432 --username=azureuser --dbname=sampledb
      ```
     
      >**Note:** Replace the `<DID>` with **<inject key="DeploymentID" enableCopy="true"/>** in the below command and run it.
